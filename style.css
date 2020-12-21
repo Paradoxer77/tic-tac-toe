@@ -123,13 +123,14 @@ table {
   border-spacing: 0;
 }
 
-/* CSS custom properties or color properties */
+/* CSS custom font and color properties */
 * {
   --international-orange-engineering: #ba1200ff;
   --rich-black-fogra-29: #031927ff;
   --light-cornflower-blue: #9dd1f1ff;
   --blue-ncs: #508aa8ff;
   --beau-blue: #c8e0f4ff;
+  font-family: "Righteous", cursive;
 }
 
 /* CSS styling for the site */
@@ -140,7 +141,6 @@ h1 {
   display: block;
   font-size: 4em;
   text-align: center;
-  font-family: "Righteous", cursive;
   margin: 20px 20px 40px 20px;
   color: var(--international-orange-engineering);
   font-weight: bold;
@@ -177,4 +177,72 @@ h1 {
   border: 1px solid var(--international-orange-engineering);
   background-color: var(--international-orange-engineering);
   color: var(--light-cornflower-blue);
+}
+
+/* Main game and scoreboard styling */
+main {
+  width: 100vw;
+  max-width: 1349px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  column-gap: 20px;
+  margin-top: 30px;
+  color: var(--rich-black-fogra-29);
+}
+
+.score-board {
+  text-align: center;
+  font-size: 3em;
+}
+
+.score-board > h3 {
+  margin-top: 20px;
+}
+
+.score-board > h4 {
+  margin-top: 90px;
+}
+
+.game-body {
+  display: grid;
+  grid-template-columns: repeat(3, 130px);
+  grid-template-rows: repeat(3, 130px);
+  justify-content: center;
+}
+
+.game-buttons {
+  background-color: var(--light-cornflower-blue);
+  color: var(--rich-black-fogra-29);
+  margin: 5px;
+  text-align: center;
+  font-size: 5em;
+  padding: 10px;
+  line-height: 88px;
+}
+
+.game-buttons:hover {
+  cursor: pointer;
+}
+
+.unavailable:hover {
+  cursor: not-allowed;
+}
+
+#again {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#restart {
+  background-color: var(--international-orange-engineering);
+  border: 1px solid var(--international-orange-engineering);
+  color: var(--beau-blue);
+}
+
+#restart:hover {
+  cursor: pointer;
 }
