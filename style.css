@@ -1,6 +1,4 @@
-/* CSS reset */
-
-html,
+CSS reset html,
 body,
 div,
 span,
@@ -123,4 +121,60 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+/* CSS custom properties or color properties */
+* {
+  --international-orange-engineering: #ba1200ff;
+  --rich-black-fogra-29: #031927ff;
+  --light-cornflower-blue: #9dd1f1ff;
+  --blue-ncs: #508aa8ff;
+  --beau-blue: #c8e0f4ff;
+}
+
+/* CSS styling for the site */
+
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+h1 {
+  display: block;
+  font-size: 4em;
+  text-align: center;
+  font-family: "Righteous", cursive;
+  margin: 20px 20px 40px 20px;
+  color: var(--international-orange-engineering);
+  font-weight: bold;
+  text-shadow: 5px 1px 2px var(--blue-ncs);
+}
+
+.game-type {
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+/* button styling */
+
+.game {
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-right: 30px;
+  font-size: 1em;
+  transition-property: "color, background-color";
+  transition-duration: 500ms;
+  border: 1px solid var(--light-cornflower-blue);
+  background-color: var(--light-cornflower-blue);
+  color: var(--international-orange-engineering);
+}
+
+.game:hover {
+  border: 1px solid var(--international-orange-engineering);
+  background-color: var(--international-orange-engineering);
+  color: var(--light-cornflower-blue);
+}
+
+.active {
+  border: 1px solid var(--international-orange-engineering);
+  background-color: var(--international-orange-engineering);
+  color: var(--light-cornflower-blue);
 }
