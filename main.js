@@ -1,11 +1,11 @@
 const gamePieces = document.getElementsByClassName("game-buttons");
+const start = document.getElementById("restart");
 
 const gameBoard = (() => {
   let board = ["", "", "", "", "", "", "", "", ""];
 
   const updateAndDisplay = (index, value) => {
     board[index] = value;
-
     gamePieces[index].innerHTML = value;
   };
   return { updateAndDisplay };
@@ -33,14 +33,25 @@ const player = (name, checker, nameID, scoreID) => {
   return { displayName, increaseScore };
 };
 
-const X = player("Zoro", "X", "player-one-name", "player-one-score");
-const O = player("Zura", "O", "player-two-name", "player-two-score");
+const X = player(1, "X", "player-one-name", "player-one-score");
+const O = player(2, "O", "player-two-name", "player-two-score");
 
-(() => {
+function startGame() {
   Array.from(gamePieces).forEach((gamePiece) => {
-    gamePiece.addEventListener("click", () => {
-      let index = Array.from(gamePieces).indexOf(gamePiece);
-      gameBoard.updateAndDisplay(index, "X");
-    });
+    let index = Array.from(gamePieces).indexOf(gamePiece);
+    gamePiece.addEventListener("click", update.bind(null, index), false);
   });
-})();
+}
+
+function update(i) {
+  gameBoard.updateAndDisplay(i, "X");
+}
+
+function gameEnd(player) {
+  player.increaseScore();
+  Array.from(gamePieces).forEach((gamePiece) => {
+    gamePiece.disabled = true;
+  });
+}
+
+start.addEventListener("click", startGame);
