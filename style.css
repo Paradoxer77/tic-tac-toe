@@ -209,6 +209,12 @@ main {
   grid-template-columns: repeat(3, 130px);
   grid-template-rows: repeat(3, 130px);
   justify-content: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .game-buttons {
@@ -223,10 +229,6 @@ main {
 
 .game-buttons:hover {
   cursor: pointer;
-}
-
-.unavailable:hover {
-  cursor: not-allowed;
 }
 
 #again {
