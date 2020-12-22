@@ -97,6 +97,7 @@ function gameEnd(player) {
 }
 
 start.addEventListener("click", () => {
+  playerTurn.textContent = "Player 1's turn";
   for (i = 0; i < 9; i++) {
     gameBoard.updateAndDisplay(i, "");
   }
@@ -104,8 +105,8 @@ start.addEventListener("click", () => {
   start.disabled = true;
 });
 
-const X = player("player1", "X", "player-one-name", "player-one-score");
-const O = player("player2", "O", "player-two-name", "player-two-score");
+const X = player("Player 1", "X", "player-one-name", "player-one-score");
+const O = player("Player 2", "O", "player-two-name", "player-two-score");
 
 gamePieces.forEach((gamePiece) => {
   let i = gamePieces.indexOf(gamePiece);
@@ -114,11 +115,11 @@ gamePieces.forEach((gamePiece) => {
       if (turn === "X") {
         X.move(i);
         turn = "O";
-        playerTurn.textContent = "player2's turn";
+        playerTurn.textContent = "Player 2's turn";
       } else {
         O.move(i);
         turn = "X";
-        playerTurn.textContent = "player1's turn";
+        playerTurn.textContent = "Player 1's turn";
       }
 
       gameLength++;
