@@ -174,6 +174,7 @@ gamePieces.forEach((gamePiece) => {
     if (gamePiece.textContent !== "X" && gamePiece.textContent !== "O") {
       if (turn === "X") {
         X.move(i);
+        gameLength++;
 
         if (O.type === "bot" && gameLength < 8) {
           index = Math.floor(Math.random() * 8 + 1);
@@ -185,6 +186,7 @@ gamePieces.forEach((gamePiece) => {
           }
 
           O.move(index);
+          gameLength++;
           // turn = "X";
           // playerTurn.textContent = "Player 1's turn";
         } else {
@@ -195,9 +197,9 @@ gamePieces.forEach((gamePiece) => {
         O.move(i);
         turn = "X";
         playerTurn.textContent = "Player 1's turn";
+        gameLength++;
       }
 
-      gameLength++;
       gameBoard.checkWins();
     }
   });
